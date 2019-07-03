@@ -1,0 +1,157 @@
+*,html{
+	margin:0;
+	padding: 0;
+	/*height: 100%;*/
+}
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+img{
+	width:100%;
+}
+/* html{font-size:62.5%;} body{font-size:12px;font-size:1.2rem ;} p,div{font-size:14px;font-size:1.4rem;} */
+.topMennu{
+	width: 100%;
+	height: 3.6rem;
+	background-color: #42B983;
+	position: fixed;
+	top:0px;
+	left:0;
+	right:0;
+	z-index:200;
+	overflow: hidden;
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+	max-width: 1920px;
+	z-index:2;
+}
+.menu-list,.goTicketTop{
+	box-sizing: border-box;
+	float: left;
+}
+.menu-list{
+	width: 60%;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+.goTicketTop{
+	width: 40%;
+	text-align: right;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+.topMennu span,.goTicketTop span{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 16%;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	padding-top: 0.15rem;
+	padding-bottom: 0.15rem;
+	height: 3rem;
+	line-height: 2.7rem;
+	text-align: center;
+	border:1px solid black;
+	background-color: white;
+	border-radius: 10px;
+}
+.xgvideo {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+.xgvideo iframe,
+.xgvideo object,
+.xgvideo embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.videoBox1 iframe,
+.videoBox1 object,
+.videoBox1 embed {
+	position: absolute;
+    top: -1%;
+    left: 0%;
+    width: 100%;
+    height: 104%;
+}
+.swiper1-video iframe,
+.swiper1-video object,
+.swiper1-video embed {
+	position: absolute;
+    top: 2%;
+    left: 0%;
+    width: 100%;
+    height: 109%;
+}
+.relativeBox{
+	position: relative;
+	width: 100%;
+}
+.vjs-custom-skin > .video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5em;
+  margin-top: -1em
+}
+
+.video-js:hover .vjs-big-play-button,.vjs-custom-skin > .video-js .vjs-big-play-button:focus,.vjs-custom-skin > .video-js .vjs-big-play-button:active {
+  background-color: rgba(0,0,0,0.45);
+}
+.xiguaCircle{
+		width: 4rem;
+		height: 4rem;
+		margin:0 auto;
+		animation: circle 0.8s linear infinite;
+		
+	}
+	@keyframes circle{
+		25% {
+			transform:rotate(90deg);
+			-ms-transform:rotate(90deg); 	/* IE 9 */
+			-moz-transform:rotate(90deg); 	/* Firefox */
+			-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+			-o-transform:rotate(90deg); 	/* Opera */
+		}
+		50% {
+			transform:rotate(180deg);
+			-ms-transform:rotate(180deg); 	/* IE 9 */
+			-moz-transform:rotate(180deg); 	/* Firefox */
+			-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+			-o-transform:rotate(180deg); 	/* Opera */
+		}
+		75% {
+		   transform:rotate(270deg);
+		   -ms-transform:rotate(270deg); 	/* IE 9 */
+		   -moz-transform:rotate(270deg); 	/* Firefox */
+		   -webkit-transform:rotate(270deg); /* Safari 和 Chrome */
+		   -o-transform:rotate(270deg); 	/* Opera */
+		}
+		100% {
+			transform:rotate(360deg);
+			-ms-transform:rotate(360deg); 	/* IE 9 */
+			-moz-transform:rotate(360deg); 	/* Firefox */
+			-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+			-o-transform:rotate(360deg); 	/* Opera */
+		}
+	}
