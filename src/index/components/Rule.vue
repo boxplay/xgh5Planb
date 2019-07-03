@@ -5,7 +5,7 @@
 		</div>
 		<div class="imgBoxImg normalDiv">
 			<div id="ruleBoxImgDiv">
-				<img style="display: block;" @load="imageLoaded" src="http://xgh5planb.someet.cc/rule_pc.jpg" alt="" width="100%">
+				<img style="display: block;" @load="imageLoaded" src="https://xgh5.someet.cc/rule_pc.jpg" alt="" width="100%">
 			</div>
 		</div>
 	</div>
