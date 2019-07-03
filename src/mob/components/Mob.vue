@@ -2,11 +2,11 @@
 	<div>
 		<div v-if="complete==false" class='loadingPage'>
 			<div class="xiguaCircle">
-				<img src="https://xgh5.someet.cc/loading.jpg" alt="" width="100%;">
+				<img src="http://xgh5planb.someet.cc/loading.jpg" alt="" width="100%;">
 			</div>
 		</div>
 		<div class="mob-main relativeBox mobCss" ref='main' v-if="complete==true">
-			<img src="https://xgh5.someet.cc/mob.jpg" @load="imgLoad" style="display: block;" alt="" width="100%"><!-- 顶部悬浮框 如果明天换图则去掉style-->
+			<img src="http://xgh5planb.someet.cc/mob.jpg" @load="imgLoad" style="display: block;" alt="" width="100%"><!-- 顶部悬浮框 如果明天换图则去掉style-->
 			<div class="mob-slideBox" v-show="Imgcomplete==true">
 				<div class="mob-slideBoxList">
 					<div class="mob-chevron" style="position: absolute;"></div>
@@ -18,9 +18,9 @@
 			<div ref='topMennuFormobBox' id='topMennuFormobBox' style="position: absolute;top: 14%">
 				<div id="topMennuFormob" :class="menuTop?'mob-fixedMenu':'mob-relativeMenu'" style="max-width: 700px;">
 					<div style="width: 100%;position: relative;">
-						<img id='imgHeight' v-show="goWhere == 'who'" src="https://xgh5.someet.cc/who.png" alt="" width="100%" ref='imgHeight'>
-						<img v-show="goWhere == 'where'" src="https://xgh5.someet.cc/where.png" alt="" width="100%">
-						<img v-show="goWhere == 'what'" src="https://xgh5.someet.cc/what.png" alt="" width="100%">
+						<img id='imgHeight' v-show="goWhere == 'who'" src="http://xgh5planb.someet.cc/who.png" alt="" width="100%" ref='imgHeight'>
+						<img v-show="goWhere == 'where'" src="http://xgh5planb.someet.cc/where.png" alt="" width="100%">
+						<img v-show="goWhere == 'what'" src="http://xgh5planb.someet.cc/what.png" alt="" width="100%">
 						<div class="mob-menu-list-mob-pc" style="position: absolute;opacity: 0;top:-9%;">
 							<span style="width: calc(100% / 3);" @click="goPoint('what')">
 								玩什么
@@ -73,7 +73,7 @@
 		<!-- 预约抢票 -->
 		<div id='goTicket' @click="goTicket" class='goTicket' v-show='Imgcomplete==true'>
 		<!-- <span style='margin-top:0.6rem;'>预约</span><span>抢票</span> -->
-			<img src="https://xgh5.someet.cc/goTicket.png" width="100%" alt="">
+			<img src="http://xgh5planb.someet.cc/goTicket.png" width="100%" alt="">
 		</div>
 		<!-- 预约抢票 -->
 	</div>
@@ -221,7 +221,7 @@
 				let option = {
 					title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 					link: window.location.href, // 分享链接，根据自身项目决定是否需要split
-					imgUrl: 'https://xgh5.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
+					imgUrl: 'http://xgh5planb.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
 				}
 				// 将配置注入通用方法
 				wxapi.ShareTimeline(option)
@@ -232,7 +232,7 @@
 				title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 				desc: '一艘承载数千创作人的神奇方舟，一个用58天建造的海上世界。8.22-8.26 五天四夜邮轮嘉年华之旅等你来！', // 分享描述, 请自行替换
 				link: window.location.href, // 分享链接，根据自身项目决定是否需要split
-				imgUrl: 'https://xgh5.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
+				imgUrl: 'http://xgh5planb.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
 			  }
 			  // 将配置注入通用方法
 			  wxapi.ShareAppMessage(option)

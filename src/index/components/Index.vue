@@ -2,11 +2,11 @@
 	<div>
 		<div v-if="complete==false" class='loadingPage'>
 			<div class="xiguaCircle">
-				<img src="https://xgh5.someet.cc/loading.jpg" alt="" width="100%;">
+				<img src="http://xgh5planb.someet.cc/loading.jpg" alt="" width="100%;">
 			</div>
 		</div>
 		<div class="main relativeBox" style="min-width: 700px;margin-top: 5%;" ref='main' v-if="complete==true">
-			<img src="https://xgh5.someet.cc/pc.jpeg"  style="display: block;" alt="" width="100%">
+			<img src="http://xgh5planb.someet.cc/pc.jpeg"  style="display: block;" alt="" width="100%">
 			<!-- 15秒了解视屏 如果明天换图则去掉style-->
 			<div class="imgBoxImg_pc" v-show="imgList.xgPlayVideoTop.isShow">
 				<div class="videoBox1">
@@ -45,25 +45,25 @@
 		<div id='topMenuForPc'>
 			<!-- 左侧logo -->
 			<div class="menuChildBox child-left">
-				<img src="https://xgh5.someet.cc/logo_white.png" alt="" width="100%">	
+				<img src="http://xgh5planb.someet.cc/logo_white.png" alt="" width="100%">	
 			</div>
 			<div class="menuChildBox child-right">
 				<!-- 四个选择项 -->
 				<div class="menu-list-mob-pc">
 					<span @click="goPoint('what')">
-						<img v-show="goWhere!='what'" src="https://xgh5.someet.cc/btn/what_btn.png" alt="" width="100%">
-						<img v-show="goWhere=='what'" src="https://xgh5.someet.cc/btn/what_btn_blue.png" alt="" width="100%">
+						<img v-show="goWhere!='what'" src="http://xgh5planb.someet.cc/btn/what_btn.png" alt="" width="100%">
+						<img v-show="goWhere=='what'" src="http://xgh5planb.someet.cc/btn/what_btn_blue.png" alt="" width="100%">
 					</span>
 					<span @click="goPoint('where')">
-						<img v-show="goWhere!='where'" src="https://xgh5.someet.cc/btn/where_btn.png" alt="" width="100%">
-						<img v-show="goWhere=='where'" src="https://xgh5.someet.cc/btn/where_btn_blue.png" alt="" width="100%">
+						<img v-show="goWhere!='where'" src="http://xgh5planb.someet.cc/btn/where_btn.png" alt="" width="100%">
+						<img v-show="goWhere=='where'" src="http://xgh5planb.someet.cc/btn/where_btn_blue.png" alt="" width="100%">
 					</span>
 					<span @click="goPoint('who')">
-						<img v-show="goWhere!='who'" src="https://xgh5.someet.cc/btn/who_btn.png" alt="" width="100%">
-						<img v-show="goWhere=='who'" src="https://xgh5.someet.cc/btn/who_btn_blue.png" alt="" width="100%">
+						<img v-show="goWhere!='who'" src="http://xgh5planb.someet.cc/btn/who_btn.png" alt="" width="100%">
+						<img v-show="goWhere=='who'" src="http://xgh5planb.someet.cc/btn/who_btn_blue.png" alt="" width="100%">
 					</span>
 					<span @click="goTicket">
-						<img src="https://xgh5.someet.cc/btn/goTicket_btn_blue.png" alt="" width="100%">
+						<img src="http://xgh5planb.someet.cc/btn/goTicket_btn_blue.png" alt="" width="100%">
 					</span>
 				</div>
 			</div>
