@@ -1,12 +1,16 @@
 <template>
 	<div>
-		<div v-if="complete==false" class='loadingPage'>
+		<div v-if="complete==false" class='loadingPage' >
 			<div class="xiguaCircle">
 				<img src="https://xgh5planb.someet.cc/loading.jpg" alt="" width="100%;">
 			</div>
 		</div>
 		<div class="mob-main relativeBox mobCss" ref='main' v-if="complete==true">
-			<img src="https://xgh5planb.someet.cc/mob.jpg" @load="imgLoad" style="display: block;" alt="" width="100%"><!-- 顶部悬浮框 如果明天换图则去掉style-->
+			<img src="https://xgh5planb.someet.cc/718-1.jpg" @load="imgLoad" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5planb.someet.cc/718-2.jpg" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5planb.someet.cc/718-3.jpg" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5planb.someet.cc/718-4.jpg" style="display: block;" alt="" width="100%">
+			
 			<div class="mob-slideBox" v-show="Imgcomplete==true">
 				<div class="mob-slideBoxList">
 					<div class="mob-chevron" style="position: absolute;"></div>
@@ -15,7 +19,7 @@
 					<div class="mob-chevron"></div>
 				</div>
 			</div>
-			<div ref='topMennuFormobBox' id='topMennuFormobBox' style="position: absolute;top: 14%">
+			<div ref='topMennuFormobBox' id='topMennuFormobBox' v-show="complete==true &&  Imgcomplete==true" style="position: absolute;top: 13%">
 				<div id="topMennuFormob" :class="menuTop?'mob-fixedMenu':'mob-relativeMenu'" style="max-width: 700px;">
 					<div style="width: 100%;position: relative;">
 						<img id='imgHeight' v-show="goWhere == 'who'" src="https://xgh5planb.someet.cc/who.png" alt="" width="100%" ref='imgHeight'>
@@ -38,12 +42,12 @@
 			<!-- 顶部悬浮框结束 -->
 			
 			<!-- 15秒了解视屏 如果明天换图则去掉style-->
-			<div class="mob-imgBoxImg_pc" v-show="imgList.xgPlayVideoTop.isShow && Imgcomplete==true">
-				<div class="videoBox1">
-					<!-- <iframe :src="imgList.xgPlayVideoTop.val[0]" frameborder="0" allowfullscreen="true">
+			<div class="mob-imgBoxImg_pc" v-show="imgList.xgPlayVideoTop.isShow && Imgcomplete==true && complete==true">
+				<div class="videoBox1" @click="playVideo('top',0)">
+					<div class="vPage" id='vPage' style="position: absolute;">
 						
-					</iframe> -->
-					<video-player  class="video-player vjs-custom-skin"
+					</div>
+					<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin"
 					ref="videoPlayerTop"
 					:playsinline="true"
 					:options="imgList.xgPlayVideoTop.options"
@@ -69,6 +73,130 @@
 			<div class='mob-positionBlock' id='mob-rule_pc' @click="goRule">
 				这是分界线
 			</div>
+			<!-- video-swiper -->
+			<div id='videoBottom' class="imgBoxImg relativeBox" v-show="imgList.xgPlayMedias.isShow  && Imgcomplete==true && complete == true">
+				<div class="swiper2" v-if="complete == true" v-show="imgList.xgPlayMedias.isShow">
+					<swiper id='videoSwiper' ref='videoSwiper' v-if="imgList.xgPlayMedias.isShow  && complete==true" :options="swiperOptionForMedia">
+						<swiper-slide class='swiper1-video'>
+							<div class="videoBox1" @click="playVideo('bottom',0)">
+								<div class="vPage" id='vPage' style="position: absolute;">
+									<!-- 底栏 -->
+									<div :class="videoPlayIndex === 0?'videoPage videoPageHide':'videoPage'">
+										{{imgList.xgPlayMedias.title[0]}}
+									</div>
+								</div>
+								<div class="videoBackBox">
+									<img src="https://xgh5planb.someet.cc/videoBack.png" alt="" width="100%">
+								</div>
+								<div class="video-vue-box">
+									<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin smallVideo"
+									ref="videoPlayerBottom0"
+									:playsinline="true"
+									:options="imgList.xgPlayMedias.options[0]"
+									@play="CplayerPlay($event,'top')"
+									@pause="CplayerPause($event,'top')"
+									@ended="onPlayerEnded($event)"
+									></video-player>
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide class='swiper1-video'>
+							<div class="videoBox1" @click="playVideo('bottom',1)">
+								<div class="vPage" id='vPage' style="position: absolute;">
+									<!-- 底栏 -->
+									<div :class="videoPlayIndex === 1?'videoPage videoPageHide':'videoPage'">
+										{{imgList.xgPlayMedias.title[1]}}
+									</div>
+								</div>
+								<div class="videoBackBox">
+									<img src="https://xgh5planb.someet.cc/videoBack.png" alt="" width="100%">
+								</div>
+								<div class="video-vue-box">
+									<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin smallVideo"
+									ref="videoPlayerBottom1"
+									:playsinline="true"
+									:options="imgList.xgPlayMedias.options[1]"
+									@play="CplayerPlay($event,'top')"
+									@pause="CplayerPause($event,'top')"
+									@ended="onPlayerEnded($event)"
+									></video-player>
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide class='swiper1-video'>
+							<div class="videoBox1" @click="playVideo('bottom',2)">
+								<div class="vPage" id='vPage' style="position: absolute;">
+									<!-- 底栏 -->
+									<div :class="videoPlayIndex === 2?'videoPage videoPageHide':'videoPage'">
+										{{imgList.xgPlayMedias.title[2]}}
+									</div>
+								</div>
+								<div class="videoBackBox">
+									<img src="https://xgh5planb.someet.cc/videoBack.png" alt="" width="100%">
+								</div>
+								<div class="video-vue-box">
+									<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin smallVideo"
+									ref="videoPlayerBottom2"
+									:playsinline="true"
+									:options="imgList.xgPlayMedias.options[2]"
+									@play="CplayerPlay($event,'top')"
+									@pause="CplayerPause($event,'top')"
+									@ended="onPlayerEnded($event)"
+									></video-player>
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide class='swiper1-video'>
+							<div class="videoBox1" @click="playVideo('bottom',3)">
+								<div class="vPage" id='vPage' style="position: absolute;">
+									<!-- 底栏 -->
+									<div :class="videoPlayIndex === 3?'videoPage videoPageHide':'videoPage'">
+										{{imgList.xgPlayMedias.title[3]}}
+									</div>
+								</div>
+								<div class="videoBackBox">
+									<img src="https://xgh5planb.someet.cc/videoBack.png" alt="" width="100%">
+								</div>
+								<div class="video-vue-box">
+									<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin smallVideo"
+									ref="videoPlayerBottom3"
+									:playsinline="true"
+									:options="imgList.xgPlayMedias.options[3]"
+									@play="CplayerPlay($event,'top')"
+									@pause="CplayerPause($event,'top')"
+									@ended="onPlayerEnded($event)"
+									></video-player>
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide class='swiper1-video'>
+							<div class="videoBox1" @click="playVideo('bottom',4)">
+								<div class="vPage" id='vPage' style="position: absolute;">
+									<!-- 底栏 -->
+									<div :class="videoPlayIndex === 4?'videoPage videoPageHide':'videoPage'">
+										{{imgList.xgPlayMedias.title[4]}}
+									</div>
+								</div>
+								<div class="videoBackBox">
+									<img src="https://xgh5planb.someet.cc/videoBack.png" alt="" width="100%">
+								</div>
+								<div class="video-vue-box">
+									<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin smallVideo"
+									ref="videoPlayerBottom4"
+									:playsinline="true"
+									:options="imgList.xgPlayMedias.options[4]"
+									@play="CplayerPlay($event,'top')"
+									@pause="CplayerPause($event,'top')"
+									@ended="onPlayerEnded($event)"
+									></video-player>
+								</div>
+							</div>
+						</swiper-slide>
+						
+					</swiper> 
+				</div>
+			</div>
+			<!-- video-swiper -->
 		</div>
 		<!-- 预约抢票 -->
 		<div id='goTicket' @click="goTicket" class='goTicket' v-show='Imgcomplete==true'>
@@ -79,15 +207,11 @@
 	</div>
 </template>
 <script>
-    // import { swiper, swiperSlide } from "vue-awesome-swiper"
-	// import { videoPlayer } from 'vue-video-player'
-	// import 'swiper/dist/css/swiper.css'
-	// import 'video.js/dist/video-js.css'
-	// import 'vue-video-player/src/custom-theme.css'
 	import wxapi from '@/common/js/wechat.js'
     export default {
       name: 'Index',
       data () {
+		  var that = this
         return {
 			complete:false,
 			DayIndex:1,
@@ -98,8 +222,28 @@
 			  speed: 1000,
 			},
 			swiperOptionForMedia:{
-				autoplay: true,
+				autoplay: false,
 				speed: 1000,
+				effect : 'coverflow',
+				slidesPerView: 3,
+				centeredSlides: true,
+				initialSlide: 2,
+				loop:false,
+				slidesPerView: 'auto',
+				slideToClickedSlide: false,
+				coverflowEffect: {
+					rotate: 0,
+					stretch: -40,
+					depth: 200,
+					modifier: 2,
+					slideShadows : true
+				},
+				on:{
+					 slideChangeTransitionEnd:function(){
+						 // console.log('停止了')
+						 that.stopVideo();
+					 }
+				}
 			},
 			playerOptions : [],
 			menuTop:false,
@@ -107,10 +251,19 @@
 			offsetTop:0,
 			screenWidth:0,
 			Imgcomplete:false,
-			goWhere:"what"
+			goWhere:"what",
+			isPlayTop:0,//是否播放15秒视频,
+			videoPlayIndex:''
         }
       },
 		methods:{
+			stopVideo(){
+				this.player0.pause();
+				this.player1.pause();
+				this.player2.pause();
+				this.player3.pause();
+				this.player4.pause();
+			},
 			CplayerPlay(player,type) {
 				if(type == 'swiper'){
 					this.swiper.autoplay.stop()
@@ -120,12 +273,80 @@
 			CplayerPause(player,type){
 					
 			},
+			onPlayerEnded(player){
+				this.videoPlayIndex = ''
+			},
+			playerStateChanged(player){
+				console.log('playing')
+			},
+			playVideo(pos,index){
+				console.log('开始播放',index+'-----'+pos)
+				if(!this.isPlayTop){
+					this.isPlayTop = 1;
+					if(pos == 'top'){
+						this.playerTop.play();
+						this.player0.pause();
+						this.player1.pause();
+						this.player2.pause();
+						this.player3.pause();
+						this.player4.pause();
+					}else if(pos == 'bottom'){
+						this.videoPlayIndex = index
+						this.playerTop.pause();
+						this.swiper.autoplay.stop()
+						if(index == 0){
+							this.player0.play();
+							this.player1.pause();
+							this.player2.pause();
+							this.player3.pause();
+							this.player4.pause();
+						}else if(index == 1){
+							this.player0.pause();
+							this.player1.play();
+							this.player2.pause();
+							this.player3.pause();
+							this.player4.pause();
+						}else if(index ==2){
+							this.player0.pause();
+							this.player1.pause();
+							this.player2.play();
+							this.player3.pause();
+							this.player4.pause();
+						}else if(index == 3){
+							this.player0.pause();
+							this.player1.pause();
+							this.player2.pause();
+							this.player3.play();
+							this.player4.pause();
+						}else if(index == 4){
+							this.player0.pause();
+							this.player1.pause();
+							this.player2.pause();
+							this.player3.pause();
+							this.player4.play();
+						}
+					}
+				}else{
+					this.isPlayTop = 0
+					this.playerTop.pause();
+					this.player0.pause();
+					this.player1.pause();
+					this.player2.pause();
+					this.player3.pause();
+					this.player4.pause();
+				}
+				
+			},
+			//活动日程切换
 			changeDay(index){
 				 this.DayIndex = index
 			},
+			//图片加载完成
 			imgLoad(){
 				this.Imgcomplete = true
+				this.getSwiperHeight();
 			},
+			//页面滚动事件
 			handleScroll(){
 				var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 				var offsetTop = document.querySelector('#topMennuFormobBox').offsetTop
@@ -148,13 +369,15 @@
 					this.playerTop.pause()
 				}
 				if(this.imgList.xgPlayMedias.isShow){
-					var videoBottom = document.querySelector('#videoBottom').clientHeight + document.querySelector('#bannerAndLogo').clientHeight
+					var videoBottom = document.querySelector('#videoBottom').clientHeight
 					var pauseTop = document.querySelector('#videoBottom').offsetTop - document.querySelector('#videoBottom').clientHeight
 					if(scrollTop < (pauseTop - videoBottom)){
 						//停止下面的播放器
 						this.player0.pause();
 						this.player1.pause();
 						this.player2.pause();
+						this.player3.pause();
+						this.player4.pause();
 					}
 				}
 			},
@@ -174,21 +397,17 @@
 				var offsetTop = ele.offsetTop
 				this.offsetTop = offsetTop - 28
 				var that = this
-				// this.index = setInterval(that.scrollEvent,8)
 				
 				if(this._isMobile()){
-					console.log('手机端')
 					this.scrollEvent(type)
 				}else{
-					console.log('PC端')
-					// this.index = setInterval(that.scrollEvent,8)
 					that.scrollEvent(type)
 				}
 			},
 			goRule(){
-				this.$router.push('/rule')
+				window.location.href='https://d.toutiao.com/k99/'
 			},
-			scrollEvent(type){
+			scrollEvent(type){//导航栏滚动事件
 				if(this._isMobile()){
 					console.log(type)
 					if(type == 'what'){
@@ -207,8 +426,15 @@
 				}
 			},
 			_isMobile() {
-				 let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+				 var flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
 				 return flag;
+			},
+			isIOS(){
+				return isApp() && navigator.userAgent.indexOf("iOS") > -1
+			},
+			isInIOS(){
+				var u = navigator.userAgent
+				return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 			},
 			//微信分享
 			wxRegCallback () {
@@ -218,7 +444,7 @@
 			},
 			wxShareTimeline () {
 				// 微信自定义分享到朋友圈
-				let option = {
+				var option = {
 					title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 					link: window.location.href, // 分享链接，根据自身项目决定是否需要split
 					imgUrl: 'https://xgh5planb.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
@@ -228,7 +454,7 @@
 			},
 			wxShareAppMessage () {
 			  // 微信自定义分享给朋友
-			  let option = {
+			  var option = {
 				title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 				desc: '一艘承载数千创作人的神奇方舟，一个用58天建造的海上世界。8.22-8.26 五天四夜邮轮嘉年华之旅等你来！', // 分享描述, 请自行替换
 				link: window.location.href, // 分享链接，根据自身项目决定是否需要split
@@ -237,9 +463,20 @@
 			  // 将配置注入通用方法
 			  wxapi.ShareAppMessage(option)
 			},
-			goTicket(){
-				window.location.href = 'https://traveldetail.fliggy.com/item.htm?id=596217589260'
-			},
+			getSwiperHeight(){
+				var that = this;
+				that.$nextTick(function(){
+					that.screenWidth = that.$refs.main.clientWidth?that.$refs.main.clientWidth:'414'
+					var w = that.screenWidth - 20
+					document.getElementById('goTicket').style.right = 'calc(50% - '+w/2+'px)'
+					window.addEventListener('scroll', that.handleScroll)
+					if(that.isInIOS()){
+						window.addEventListener('touchmove',that.handleScroll)
+					}
+					// var h = document.querySelector('#vPage').offsetHeight
+					// document.querySelector('#videoSwiper').style.height = h +'px'
+				})
+			}
 		},
 		watch:{ 
 			 $route(to,from){
@@ -264,6 +501,12 @@
 			player2() {
 				return this.$refs.videoPlayerBottom2.player
 			},
+			player3() {
+				return this.$refs.videoPlayerBottom3.player
+			},
+			player4() {
+				return this.$refs.videoPlayerBottom4.player
+			},
 			playerTop() {
 				return this.$refs.videoPlayerTop.player
 			},
@@ -271,30 +514,13 @@
 				return this.$refs.videoSwiper.swiper
 			}
 		 },
-		 mounted(){
+		mounted(){
 			var that = this
-			this.$axios.get('/static/img.json').then((response)=>{
+			this.$axios.get('/static/img.json').then(function(response){
 			 	that.imgList = response.data
 				 //定位购票的位置
 				 that.complete = true;
-				this.$nextTick(() => {
-					that.screenWidth = this.$refs.main.clientWidth?this.$refs.main.clientWidth:'414'
-					var w = this.screenWidth - 20
-					document.getElementById('goTicket').style.right = 'calc(50% - '+w/2+'px)'
-				})
-				window.onresize = () => {
-				  return (() => {
-					this.$nextTick(() => {
-						that.screenWidth = this.$refs.main.clientWidth
-						var w = this.screenWidth - 20
-						// document.getElementById('goTicket').style.right = 'calc(50% - '+w/2+'px)'
-					})
-				  })()
-				}
-			})
-			 //监听页面滚动
-			this.$nextTick(function(){
-				window.addEventListener('scroll', this.handleScroll)
+				
 			})
 			//微信分享
 			if(wxapi.isweixin()){
@@ -302,14 +528,81 @@
 				wxapi.wxRegister(this.wxRegCallback)
 			}
 		},
-			beforeDestroy () {
-			  window.removeEventListener('scroll', this.handleScroll)
-			},
+		beforeDestroy(){
+		  window.removeEventListener('scroll', this.handleScroll)
+		}
+
     }
 </script>
 <style scope>
+	.videoBox1{
+		position: relative;
+	}
+	.video-vue-box{
+		width: 99.6%;
+		position: absolute;
+		left: 0.3%;
+		right: 0;
+		bottom: 0;
+		top: 0.9%;
+		height: 96%;
+	}
+	.vjs-poster{
+		border-radius: 0.3rem;
+	}
+	.smallVideo{
+		width: 99%;
+	}
+	.videoBackBox img{
+		border-radius: 0.3rem;
+		display: block;
+	}
+	.swiper2 video{
+		border-radius: 0.3rem;
+	}
+	.swiper2 .swiper-container .video-js.vjs-16-9, .video-js.vjs-4-3, .video-js.vjs-fluid{
+		border-radius: 0.3rem;
+	}
+	.videoPage{
+		background-color: rgba(0,0,0,0.5);
+		position:absolute;
+		bottom: -2%;
+		width: 98.96%;
+		height: 2rem;
+		text-align: center;
+		color:white;
+		line-height:2rem ;
+		border-bottom-left-radius: 0.3rem;
+		border-bottom-right-radius: 0.3rem;
+	}
+	.videoPageHide{
+		/* opacity: 0; */
+		display: none;
+	}
+	.vjs-has-started .vjs-control-bar{
+		z-index:201;
+	}
+	.video-js .vjs-tech{
+		height: 102%;
+	}
+	
 	#topMennuFormob{
 		z-index:300;
+	}
+	.swiper-slide{
+		width: 72.8%;
+	}
+	.vPage{
+		position: absolute;
+	    width: 100%;
+	    height: 98%;
+	    z-index: 200;
+	    opacity: 1;
+	}
+	#videoBottom{
+		position: absolute;
+		width: 100%;
+		top: 80.3%;
 	}
 	#topMenuForPc{
 		width: 100%;
@@ -391,7 +684,7 @@
 		height: 0.6%;
 		position: absolute;
 		background-color: white;
-		top: 84.3%;
+		top: 78.1%;
 		left: 0.8%;
 		right: 0;
 		margin: 0 auto;
@@ -400,18 +693,18 @@
 		text-align: center;
 	}
 	#mob-what_pc{
-		top: 28%;
+		top: 26%;
 	}
 	#mob-where_pc{
-		top:47.5%;
+		top:44.1%;
 	}
 	#mob-who_pc{
-		top:75.5%;
+		top:69.9%;
 	}
 	.mob-imgBoxImg_pc{
 		width: 87.8%;
 		position: absolute;
-		top: 16.5%;
+		top: 15.3%;
 		left: -0.6%;
 		right: 0;
 		margin: 0 auto;
@@ -434,7 +727,7 @@
 	}
 	.mob-slideBox{
 		width: 100%;
-		top: 13%;
+		top: 12%;
 		position: absolute;
 		text-align: center;
 		/* background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6));
