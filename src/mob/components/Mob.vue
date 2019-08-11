@@ -31,7 +31,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="mob-day-content">
+					<div class="mob-day-content scrollbar-rail">
 						<img width="100%" src="https://xgh5planb.someet.cc/act22.png" alt="" v-show="daySelect == 0">
 						<img width="100%" src="https://xgh5planb.someet.cc/act23.png" alt="" v-show="daySelect == 1">
 						<img width="100%" src="https://xgh5planb.someet.cc/act24.png" alt="" v-show="daySelect == 2">
@@ -394,6 +394,11 @@
 			imgLoad(){
 				this.Imgcomplete = true
 				this.getSwiperHeight();
+				this.$nextTick(function(){
+					$(document).ready(function(){
+					    $('.scrollbar-rail').scrollbar();
+					});
+				})
 			},
 			//页面滚动事件
 			handleScroll(){
