@@ -161,6 +161,7 @@
 			swiperOptionForBanner:{
 				autoplay: true,
 				speed: 2000,
+				loop:true
 			},
 			playerOptions : [],
 			menuTop:false,
@@ -180,8 +181,7 @@
 			CplayerPlay(player,type) {
 				if(type == 'swiper'){
 					this.swiper.autoplay.stop()
-				}
-					
+				}	
 			},
 			CplayerPause(player,type){
 					
