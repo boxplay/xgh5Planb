@@ -53,7 +53,6 @@ export default {
 * { -webkit-tap-highlight-color: rgba(0,0,0,0); } 
 a,button,input,span{ 
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);    
-	-webkit-user-modify: read-write-plaintext-only;
 	outline: none;
 	border:none;
 }
