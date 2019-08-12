@@ -8,7 +8,17 @@
 		<div class="main relativeBox" style="min-width: 1200px;margin-top: 5%;" ref='main' v-if="complete==true">
 			<img src="https://xgh5planb.someet.cc/812-pc.jpg" @load="imgLoad" style="display: block;" alt="" width="100%">
 			<!-- 15秒了解视屏 如果明天换图则去掉style-->
-			
+			<div class="imgBoxImg_pc" v-show="imgList.xgPlayVideoTop.isShow">
+				<div class="videoBox1">
+					<video-player  class="video-player vjs-custom-skin"
+					ref="videoPlayerTop"
+					:playsinline="true"
+					:options="imgList.xgPlayVideoTop.options"
+					@play="CplayerPlay($event,'top')"
+					@pause="CplayerPause($event,'top')"
+					></video-player>
+				</div>
+			</div>
 			<!-- 15秒了解视频 -->
 			<!-- 玩什么 -->
 			<div class="positionLine" id='what_pc'>
@@ -30,7 +40,7 @@
 			<div class="pc-banner-div">
 				<div class="pc-banner-swiper">
 					<div>
-						<a href="https://www.toutiao.com/i6721317691421901326/"><img src="https://xgh5.someet.cc/ft_pc.jpg" width="100%" alt=""></a>
+						<a href="https://www.toutiao.com/i6721317691421901326/"><img src="https://xgh5planb.someet.cc/ft_pc.jpg" width="100%" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -238,6 +248,7 @@
 			//活动日程切换
 			changeDay(index){
 				 this.daySelect = index
+				 console.log(this.daySelect)
 			},
 			goTicket(){
 				window.location.href = 'https://traveldetail.fliggy.com/item.htm?id=596217589260'
@@ -305,6 +316,7 @@
 			var that = this
 			this.$axios.get('/static/img.json').then((response)=>{
 			 	that.imgList = response.data
+				console.log(typeof(that.imgList))
 				that.complete = true;
 				 //定位购票的位置
 				that.$nextTick(() => {
