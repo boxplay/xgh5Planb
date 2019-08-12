@@ -2,45 +2,45 @@
 	<div>
 		<div v-if="complete==false" class='loadingPage' >
 			<div class="xiguaCircle">
-				<img src="https://xgh5planb.someet.cc/loading.jpg" alt="" width="100%;">
+				<img src="https://xgh5.someet.cc/loading.jpg" alt="" width="100%;">
 			</div>
 		</div>
 		<div class="mob-main relativeBox mobCss" ref='main' v-if="complete==true">
-			<img src="https://xgh5planb.someet.cc/718-1.jpg" @load="imgLoad" style="display: block;" alt="" width="100%">
-			<img src="https://xgh5planb.someet.cc/718-2.jpg" style="display: block;" alt="" width="100%">
-			<img src="https://xgh5planb.someet.cc/812-3.jpg" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5.someet.cc/718-1.jpg" @load="imgLoad" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5.someet.cc/718-2.jpg" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5.someet.cc/812-3.jpg" style="display: block;" alt="" width="100%">
 			<!-- 活动日程开始 -->
 			<div class="mob-day-main">
 				<div>
-					<img src="https://xgh5planb.someet.cc/812-day.jpg" alt="" width="">
+					<img src="https://xgh5.someet.cc/812-day.jpg" alt="" width="">
 				</div>
 				<div class="mob-day-box">
 					<div class="mob-day-container">
 						<div class="mob-day-container-img">
 							<div @click="changeDay(0)">
-								<img :src="daySelect == 0?'https://xgh5planb.someet.cc/day22_red.png':'https://xgh5planb.someet.cc/day22.png'" width="100%" alt="">
+								<img :src="daySelect == 0?'https://xgh5.someet.cc/day22_red.png':'https://xgh5.someet.cc/day22.png'" width="100%" alt="">
 							</div>
 							<div  @click="changeDay(1)">
-								<img :src="daySelect == 1?'https://xgh5planb.someet.cc/day23_red.png':'https://xgh5planb.someet.cc/day23.png'" width="100%" alt="">
+								<img :src="daySelect == 1?'https://xgh5.someet.cc/day23_red.png':'https://xgh5.someet.cc/day23.png'" width="100%" alt="">
 							</div>
 							<div @click="changeDay(2)">
-								<img :src="daySelect == 2?'https://xgh5planb.someet.cc/day24_red.png':'https://xgh5planb.someet.cc/day24.png'" width="100%" alt="">
+								<img :src="daySelect == 2?'https://xgh5.someet.cc/day24_red.png':'https://xgh5.someet.cc/day24.png'" width="100%" alt="">
 							</div>
 							<div @click="changeDay(3)">
-								<img :src="daySelect == 3?'https://xgh5planb.someet.cc/day25_red.png':'https://xgh5planb.someet.cc/day25.png'" width="100%" alt="">
+								<img :src="daySelect == 3?'https://xgh5.someet.cc/day25_red.png':'https://xgh5.someet.cc/day25.png'" width="100%" alt="">
 							</div>
 						</div>
 					</div>
 					<div class="mob-day-content scrollbar-rail" :class="daySelect == 0 || daySelect == 2?'scroll-scrolly_visible':''">
-						<img width="100%" src="https://xgh5planb.someet.cc/act22.png" alt="" v-show="daySelect == 0">
-						<img width="100%" src="https://xgh5planb.someet.cc/act23.png" alt="" v-show="daySelect == 1">
-						<img width="100%" src="https://xgh5planb.someet.cc/act24.png" alt="" v-show="daySelect == 2">
-						<img width="100%" src="https://xgh5planb.someet.cc/act25.png" alt="" v-show="daySelect == 3">
+						<img width="100%" src="https://xgh5.someet.cc/act22.png" alt="" v-show="daySelect == 0">
+						<img width="100%" src="https://xgh5.someet.cc/act23.png" alt="" v-show="daySelect == 1">
+						<img width="100%" src="https://xgh5.someet.cc/act24.jpg" alt="" v-show="daySelect == 2">
+						<img width="100%" src="https://xgh5.someet.cc/act25.png" alt="" v-show="daySelect == 3">
 					</div>
 				</div>
 			</div>
 			<!-- 活动日程结束 -->
-			<img src="https://xgh5planb.someet.cc/812-4.jpg" style="display: block;" alt="" width="100%">
+			<img src="https://xgh5.someet.cc/812-4.jpg" style="display: block;" alt="" width="100%">
 			
 			<div class="mob-slideBox" v-show="Imgcomplete==true">
 				<div class="mob-slideBoxList">
@@ -53,9 +53,9 @@
 			<div ref='topMennuFormobBox' id='topMennuFormobBox' v-show="complete==true &&  Imgcomplete==true" style="position: absolute;top: 12.8%">
 				<div id="topMennuFormob" :class="menuTop?'mob-fixedMenu':'mob-relativeMenu'" style="max-width: 700px;">
 					<div style="width: 100%;position: relative;">
-						<img id='imgHeight' v-show="goWhere == 'who'" src="https://xgh5planb.someet.cc/who.png" alt="" width="100%" ref='imgHeight'>
-						<img v-show="goWhere == 'where'" src="https://xgh5planb.someet.cc/where.png" alt="" width="100%">
-						<img v-show="goWhere == 'what'" src="https://xgh5planb.someet.cc/what.png" alt="" width="100%">
+						<img id='imgHeight' v-show="goWhere == 'who'" src="https://xgh5.someet.cc/who.png" alt="" width="100%" ref='imgHeight'>
+						<img v-show="goWhere == 'where'" src="https://xgh5.someet.cc/where.png" alt="" width="100%">
+						<img v-show="goWhere == 'what'" src="https://xgh5.someet.cc/what.png" alt="" width="100%">
 						<div class="mob-menu-list-mob-pc" style="position: absolute;opacity: 0;top:-9%;">
 							<span style="width: calc(100% / 3);" @click="goPoint('what')">
 								玩什么
@@ -106,13 +106,13 @@
 			<!-- banner -->
 			<div class="mob-banner-div">
 				<div class="mob-banner-swiper">
-					<!-- https://xgh5planb.someet.cc/xgposter.jpg -->
+					<!-- https://xgh5.someet.cc/xgposter.jpg -->
 					<swiper id='BannerSwiper' ref='BannerSwiper' v-if="complete==true" :options="swiperOptionForBanner">
 						<swiper-slide class='swiper1-video'>
-							<img src="https://xgh5planb.someet.cc/ft_mobile.jpg" width="100%" alt="">
+							<a href="https://www.toutiao.com/i6721317691421901326/"><img src="https://xgh5.someet.cc/ft_mobile.jpg" width="100%" alt=""></a>
 						</swiper-slide>
 						<swiper-slide class='swiper1-video'>
-							<img src="https://xgh5planb.someet.cc/ss.jpg" width="100%" alt="">
+							<a href="https://www.ixigua.com/i6719331585704854024/"><img src="https://xgh5.someet.cc/ss.jpg" width="100%" alt=""></a>
 						</swiper-slide>
 					</swiper>
 				</div>
@@ -122,13 +122,10 @@
 			<div id='videoBottom' class="imgBoxImg relativeBox" v-show="imgList.xgPlayMedias.isShow  && Imgcomplete==true && complete == true">
 				<div class="swiper2" v-if="complete == true" v-show="imgList.xgPlayMedias.isShow">
 					<div class="videoBox1" @click="playVideo('bottom',0)">
-						<div class="vPage" id='vPage' style="position: absolute;">
-							
-						</div>
 						<video-player  id='mob-imgBoxImg_pc' class="video-player vjs-custom-skin"
 						ref="videoPlayerBottom0"
 						:playsinline="true"
-						:options="imgList.xgPlayVideoTop.options"
+						:options="imgList.xgPlayMedias.options[0]"
 						></video-player>
 					</div>
 				</div>
@@ -138,7 +135,7 @@
 		<!-- 预约抢票 -->
 		<div id='goTicket' @click="goTicket" class='goTicket' v-show='Imgcomplete==true'>
 		<!-- <span style='margin-top:0.6rem;'>预约</span><span>抢票</span> -->
-			<img src="https://xgh5planb.someet.cc/goTicket.png" width="100%" alt="">
+			<img src="https://xgh5.someet.cc/goTicket.png" width="100%" alt="">
 		</div>
 		<!-- 预约抢票 -->
 	</div>
@@ -161,7 +158,7 @@
 			swiperOptionForBanner:{
 				autoplay: true,
 				speed: 2000,
-				loop:true
+				loop : true,
 			},
 			playerOptions : [],
 			menuTop:false,
@@ -181,7 +178,8 @@
 			CplayerPlay(player,type) {
 				if(type == 'swiper'){
 					this.swiper.autoplay.stop()
-				}	
+				}
+					
 			},
 			CplayerPause(player,type){
 					
@@ -324,7 +322,7 @@
 				var option = {
 					title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 					link: window.location.href, // 分享链接，根据自身项目决定是否需要split
-					imgUrl: 'https://xgh5planb.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
+					imgUrl: 'https://xgh5.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
 				}
 				// 将配置注入通用方法
 				wxapi.ShareTimeline(option)
@@ -335,7 +333,7 @@
 				title: '2019西瓜PLAY视频嘉年华', // 分享标题, 请自行替换
 				desc: '一艘承载数千创作人的神奇方舟，一个用58天建造的海上世界。8.22-8.26 五天四夜邮轮嘉年华之旅等你来！', // 分享描述, 请自行替换
 				link: window.location.href, // 分享链接，根据自身项目决定是否需要split
-				imgUrl: 'https://xgh5planb.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
+				imgUrl: 'https://xgh5.someet.cc/logo-xigua.png' // 分享图标, 请自行替换，需要绝对路径
 			  }
 			  // 将配置注入通用方法
 			  wxapi.ShareAppMessage(option)
@@ -397,6 +395,9 @@
     }
 </script>
 <style scope>
+	.smallWidth{
+		width: 100%;
+	}
 	.videoBox1{
 		position: relative;
 	}
