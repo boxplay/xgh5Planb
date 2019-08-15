@@ -136,10 +136,10 @@
 			<!-- video-swiper -->
 		</div>
 		<!-- 预约抢票 -->
-		<div id='goTicket' @click="goTicket" class='goTicket' v-show='Imgcomplete==true'>
+		<!-- <div id='goTicket' @click="goTicket" class='goTicket' v-show='Imgcomplete==true'> -->
 		<!-- <span style='margin-top:0.6rem;'>预约</span><span>抢票</span> -->
-			<img src="https://xgh5.someet.cc/goTicket.png" width="100%" alt="">
-		</div>
+			<!-- <img src="https://xgh5.someet.cc/goTicket.png" width="100%" alt="">
+		</div> -->
 		<!-- 预约抢票 -->
 	</div>
 </template>
@@ -348,7 +348,7 @@
 				that.$nextTick(function(){
 					that.screenWidth = that.$refs.main.clientWidth?that.$refs.main.clientWidth:'414'
 					var w = that.screenWidth - 20
-					document.getElementById('goTicket').style.right = 'calc(50% - '+w/2+'px)'
+					// document.getElementById('goTicket').style.right = 'calc(50% - '+w/2+'px)'
 					window.addEventListener('scroll', that.handleScroll)
 					if(that.isInIOS()){
 						window.addEventListener('touchmove',that.handleScroll)
